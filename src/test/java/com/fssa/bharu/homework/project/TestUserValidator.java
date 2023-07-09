@@ -6,27 +6,40 @@ public class TestUserValidator {
 //  for valid Username
 	@Test
 	public void testValidName() {
-		Assertions.assertTrue(UserDetailsValidator.ValidateName("Santhus"));
+		Assertions.assertTrue(ProductDetailsValiate.ValidateName("Santhus"));
 	}
+	
+
+	@Test
+	public void testInvalidName() {
+		try {
+			ProductDetailsValiate.ValidateName(null);
+			Assertions.fail("Validatename failed");
+		} catch (IllegalArgumentException ex) {
+			Assertions.assertEquals("Name cannot be empty or null", ex.getMessage());
+		}
+		 
+	}
+ 
+	
+	
+	
 //  for valid Email
 	@Test
-	public void testValidEmail() {
-		Assertions.assertTrue(UserDetailsValidator.validateEmail("Santhanam@gmail.com"));
+	public void testValidDescription() {
+		Assertions.assertTrue(ProductDetailsValiate.validateDescription("Hellojhvutfutfu"));
 	}
 	@Test
-	public void testValidPhoneNumber() {
-		Assertions.assertTrue(UserDetailsValidator.validatePhoneNumber("9095297688"));
+	public void testValidTitle() {
+		Assertions.assertTrue(ProductDetailsValiate.ValidateTitle("samdsmsam"));
 	}
 	@Test
-	public void testValidPinCode() {
-		Assertions.assertTrue(UserDetailsValidator.validatePinCode("6021211"));
+	public void testValidSold_by() {
+		Assertions.assertTrue(ProductDetailsValiate.validateSold_by("Santhu"));
 	}
 	@Test
-	public void testValidPlace() {
-		Assertions.assertTrue(UserDetailsValidator.validatePlace("Tirunelveli"));
+	public void testValidPrize() {
+		Assertions.assertTrue(ProductDetailsValiate.validatePrize(300));
 	}
-	@Test
-	public void testValidPassword() {
-		Assertions.assertTrue(UserDetailsValidator.validatePassword("Santhuq2r4#17"));
-	}
+	 
 }
