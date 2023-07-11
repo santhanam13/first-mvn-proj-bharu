@@ -4,14 +4,24 @@ package com.fssa.bharu.homework.project;
  * @author SanthanamMariappan
  *
  */
+
 public class ProductUpload {
 	String product_name;
 	String Description;
 	String Title;
 	String Sold_by;
 	int prize;
+	String url;
 	
-	
+	 
+
+	public String getUrl() {
+		return url;
+	}
+
+	public void setUrl(String url) {
+		this.url = url;
+	}
 
 	public String getProduct_name() {
 		return product_name;
